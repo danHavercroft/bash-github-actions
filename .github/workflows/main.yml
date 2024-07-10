@@ -15,7 +15,7 @@ jobs:
 
     - name: Run Bash script tests
       run: |
-        chmod +x ./my_script.sh &&  ./script.sh
+        chmod +x ./my_script.sh &&  ./my_script.sh
 
   deploy:
     runs-on: ubuntu-latest

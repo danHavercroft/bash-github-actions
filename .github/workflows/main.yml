@@ -31,6 +31,10 @@ jobs:
         chmod 600 private_key
         ssh -i private_key -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "echo 'SSH Connection Successful'"
 
+    - name: Run ll
+      run: |
+        ls -la
+
     - name: Copy files to VM
       run: |
         scp -i private_key -o StrictHostKeyChecking=no -P ${{ secrets.PORT }} -r . ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/root

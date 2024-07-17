@@ -37,4 +37,4 @@ jobs:
 
     - name: Run script on remote server
       run: |
-        ssh -o StrictHostKeyChecking=no user@remote-server 'bash /root/my_script.sh'
+        ssh -o StrictHostKeyChecking=no user@${{ secrets.SSH_HOST }} 'bash /root/my_script.sh'
